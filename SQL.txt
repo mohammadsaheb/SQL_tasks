@@ -1,0 +1,98 @@
+@everyone 
+Step 1: Database Design
+1. Create the following tables with appropriate data types and relationships:
+ - Students: student_id, first_name, last_name, email, date_of_birth, gender, major, enrollment_year
+ - Courses: course_id, course_name, course_code, credits, department
+ - Instructors: instructor_id, first_name, last_name, email, hire_date, department
+ - Enrollments: enrollment_id, student_id, course_id, grade
+ - Course Assignments: assignment_id, instructor_id, course_id, semester, year
+
+instructors :
+CREATE DATABASE m3;
+CREATE TABLE instructors (
+    instructor_id int,
+    first_name varchar(255),
+    last_name varchar(255),
+    email varchar (255),
+    hire_date date ,
+     department varchar (255)
+    );
+-------------------------------------------------------
+enrollments:
+CREATE DATABASE m4;
+CREATE TABLE Enrollments (
+    enrollment_id int (255), 
+    student_id int(255),
+    course_id int(255),
+    grade int(255)
+    );
+------------------------------------------------------------
+Course Assignments :
+CREATE DATABASE m5;
+CREATE TABLE Course_Assignments ( 
+	assignment_id int(255),
+ 	instructor_id int(255),
+	 course_id int(255),
+	semester varchar (10),
+ 	year_time year
+ );
+--------------------------------------------------------------------
+insert Data
+write code to  Insert Data
+Insert at least 10 students, 5 instructors, and 5 courses. Make sure courses are assigned to instructors, and
+students are enrolled in at least 2 courses each.
+
+insert students:
+INSERT INTO students (student_id, first_name, last_name, email, date_of_birth, gender, major, enrollment_year)
+VALUES 
+(1, 'John', 'Doe', 'johndoe@example.com', '2000-05-15', 'Male', 'Computer Science', 2018),
+(2, 'Jane', 'Smith', 'janesmith@example.com', '2001-07-23', 'Female', 'Information Technology', 2019),
+(3, 'Michael', 'Johnson', 'michaelj@example.com', '1999-02-10', 'Male', 'Software Engineering', 2017),
+(4, 'Emily', 'Brown', 'emilyb@example.com', '2000-11-05', 'Female', 'Business Administration', 2018),
+(5, 'David', 'Williams', 'davidw@example.com', '2001-03-20', 'Male', 'Data Science', 2019),
+(6, 'Sarah', 'Jones', 'sarahj@example.com', '1998-08-14', 'Female', 'Cybersecurity', 2016),
+(7, 'Chris', 'Davis', 'chrisd@example.com', '1999-09-25', 'Male', 'Mechanical Engineering', 2017),
+(8, 'Laura', 'Miller', 'lauram@example.com', '2000-12-19', 'Female', 'Electrical Engineering', 2018),
+(9, 'James', 'Wilson', 'jamesw@example.com', '2001-01-11', 'Male', 'Marketing', 2019),
+(10, 'Sophia', 'Taylor', 'sophiat@example.com', '2002-04-07', 'Female', 'Graphic Design', 2020);
+-------------------------------------------------------------------------
+insert instructors:
+INSERT INTO instructors (instructor_id, first_name, last_name, email, hire_date, department)
+VALUES 
+(1, 'Alice', 'Anderson', 'alicea@example.com', '2015-03-12', 'Computer Science'),
+(2, 'Bob', 'Johnson', 'bobj@example.com', '2016-08-25', 'Information Technology'),
+(3, 'Charlie', 'Davis', 'charlied@example.com', '2017-11-30', 'Software Engineering'),
+(4, 'Diana', 'Smith', 'dianas@example.com', '2018-06-14', 'Business Administration'),
+(5, 'Edward', 'Taylor', 'edwardt@example.com', '2019-02-05', 'Data Science');
+---------------------------------------------------------------------------------
+insert courses:
+INSERT INTO course_Assignments (course_id, course_name, course_code, credits, department)
+VALUES 
+(1, 'Database Systems', 'CS101', 3, 'Computer Science'),
+(2, 'Web Development', 'IT202', 4, 'Information Technology'),
+(3, 'Data Structures', 'SE303', 3, 'Software Engineering'),
+(4, 'Operating Systems', 'BA404', 3, 'Business Administration'),
+(5, 'Computer Networks', 'DS505', 4, 'Data Science');
+------------------------------------------------------------------------------------
+insert enrollments:
+INSERT INTO enrollments (student_id, course_id , grade)
+VALUES 
+
+(1, 1, 'A'), (1, 2, 'B'),
+(2, 2, 'A'), (2, 3, 'C'),
+(3, 3, 'B'), (3, 4, 'A'),
+(4, 4, 'B'), (4, 5, 'C'),
+(5, 1, 'A'), (5, 5, 'B'),
+(6, 2, 'C'), (6, 3, 'A'),
+(7, 3, 'B'), (7, 4, 'C'),
+(8, 4, 'A'), (8, 5, 'B'),
+(9, 1, 'C'), (9, 2, 'A'),
+(10, 3, 'B'), (10, 5, 'A');
+-------------------------------------------------------------------------------------
+
+
+
+
+
+
+
